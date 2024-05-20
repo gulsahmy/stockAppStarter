@@ -10,6 +10,7 @@ import TextField from "@mui/material/TextField"
 import { Button } from "@mui/material"
 import { Formik, Form } from "formik"
 import { object, string } from "yup"
+// import { login } from "../services/useApiRequest"
 import useApiRequest from "../services/useApiRequest"
 
 const Login = () => {
@@ -73,10 +74,15 @@ const Login = () => {
             initialValues={{ email: "", password: "" }}
             validationSchema={loginSchema}
             onSubmit={(values, actions) => {
-             
+              //TODO
+              //? POST (Login)
+              //? Toastify
+              //? Global state güncellenmesi
+              //? form resetleme
+              //? navigate
               login(values)
               actions.resetForm()
-              actions.setSubmitting(false) 
+              actions.setSubmitting(false) //? isSubmitting
             }}
           >
             {({
